@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity version="1.0.0.0" name="AccessControlDialogAutoClose" type="win32"/>
+  <!--
+    Forces this exe to always run elevated (admin). Required because
+    Q-Sys Designer runs elevated too, and Windows (UIPI) blocks window
+    messages such as WM_CLOSE from a standard-user process to an
+    elevated process's window (Win32 error 5 = access denied).
+  -->
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level="requireAdministrator" uiAccess="false"/>
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+</assembly>
